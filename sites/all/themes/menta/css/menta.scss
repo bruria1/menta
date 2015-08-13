@@ -1,0 +1,154 @@
+@mixin respond-to($media) {
+  @if $media == small {
+    @media (max-width: 480px) { @content; }
+  }
+  @else if $media == medium {
+    @media (min-width: 481px) and (max-width: 767px) { @content; }
+  }
+  @else if $media == large {
+    @media  (min-width: 768px) { @content; }
+  }
+  @if $media == small-medium {
+    @media (max-width: 767px) { @content; }
+  }
+}
+
+.container, .navbar.container{
+  max-width: 990px;
+}
+
+.navbar.container > .container{
+  margin-top: 12px;
+}
+
+.region-top{
+    height: 30px;
+    margin-top: 8px;
+    width: 88%;
+    img{
+      float: left;
+      margin-right: 16px;
+    }
+}
+
+/********  menu   ***********/
+
+.navbar-default {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.navbar-nav{
+  float: right;
+  > li {
+    float: right;
+    margin: 0 0 0 2px !important;
+    padding: 0;
+  }
+  > li.last{
+    margin: 0!important;
+  }
+  a{
+    background-color: #999999;
+    height: 30px;
+    color: #000!important;
+    padding: 4px 0 0 0!important;
+    text-align: center;
+  }
+  a.active, a:hover{
+    color: #fff!important;
+  }
+}
+.navbar-collapse{
+  padding: 0;
+  ul{
+    padding: 0;
+    width: 88%;
+  }
+  li{
+    width: 12.28%;
+  }
+}
+
+.navbar.container {
+    margin-top: 0px;
+}
+
+/********  superslider   ***********/
+
+#slides {
+  position: fixed!important;
+  z-index: 0;
+  height: 608px!important;
+  .scrollable {
+    *zoom: 1;
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    height: 100%;
+  }
+  .scrollable:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .slides-navigation {
+    margin: 0 auto;
+    position: absolute;
+    z-index: 150;
+    bottom: 110px;
+    width: 100%;
+    height: 0;
+    .wrapper{
+      width: 50%;
+      height: 0;
+    }
+    .wrapper-right{
+      float: right;
+    }
+    .wrapper-left{
+      float: left;
+    }
+    a {
+      display: block;
+      z-index: 150;
+    }
+    a.prev {
+      float: left;
+      left:341px;
+      position: relative;
+    }
+    a.next {
+      right:341px;
+      position: relative;
+      float: right;
+    }
+  }
+  .slides-pagination {
+    position: absolute;
+    z-index: 100;
+    bottom: 64px;
+    text-align: center;
+    width: 100%;
+    a {
+      border: 2px solid #b6c931;
+      border-radius: 15px;
+      width: 16px;
+      height: 16px;
+      display: -moz-inline-stack;
+      display: inline-block;
+      vertical-align: middle;
+      *vertical-align: auto;
+      zoom: 1;
+      *display: inline;
+      margin: 15px;
+      overflow: hidden;
+      text-indent: -9999px;
+    }
+    a.current {
+      background: #b6c931;
+    }
+  }
+}

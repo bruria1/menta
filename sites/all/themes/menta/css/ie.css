@@ -1,0 +1,91 @@
+/* line 1, ../sass/ie.scss */
+body.ie {
+  font-family: arial !important;
+}
+/* line 3, ../sass/ie.scss */
+body.ie .field-name-field-main-text, body.ie button, body.ie .block-title, body.ie .page-header, body.ie .navbar-nav a, body.ie .link-slide a, body.ie th, body.ie .alert-block {
+  font-family: arial !important;
+}
+/* line 6, ../sass/ie.scss */
+body.ie div.ddblock-cycle-upright60p div.scrollable-pager div.items div a {
+  font-family: arial !important;
+  font-size: 14px;
+}
+/* line 10, ../sass/ie.scss */
+body.ie .navbar-nav a {
+  font-size: 14px;
+}
+/* line 13, ../sass/ie.scss */
+body.ie .view-gas-stations .form-type-select select {
+  padding: 0 33px 0 0;
+}
+
+/* line 19, ../sass/ie.scss */
+.ie8 .view-gas-stations .form-type-select select {
+  margin-top: -5px;
+}
+/* line 22, ../sass/ie.scss */
+.ie8 .navbar-header button {
+  display: none;
+}
+/* line 25, ../sass/ie.scss */
+.ie8 .navbar-collapse {
+  margin-top: -88px;
+  position: absolute;
+  width: 940px;
+  display: block;
+  margin-right: 17px;
+  border: none;
+}
+/* line 34, ../sass/ie.scss */
+.ie8 #block-block-5 .row-1 {
+  background: url("../images/payment-1-ie.png") no-repeat center top transparent;
+}
+/* line 37, ../sass/ie.scss */
+.ie8 #block-block-5 .row-2 {
+  background: url("../images/payment-2-ie.png") no-repeat center top transparent;
+}
+/* line 40, ../sass/ie.scss */
+.ie8 #block-block-5 .row-3 {
+  background: url("../images/payment-3-ie.png") no-repeat center top transparent;
+}
+/* line 43, ../sass/ie.scss */
+.ie8 #block-block-5 .row-4 {
+  background: url("../images/payment-4-ie.png") no-repeat center top transparent;
+}
+/* line 46, ../sass/ie.scss */
+.ie8 #block-block-5 .row-5 {
+  background: url("../images/payment-5-ie.png") no-repeat center top transparent;
+}
+/* line 49, ../sass/ie.scss */
+.ie8 #block-block-5 .row-6 {
+  background: url("../images/payment-6-ie.png") no-repeat center top transparent;
+}
+/* line 54, ../sass/ie.scss */
+.ie8 #block-block-3 .row-1 {
+  background: url("../images/row-1-ie.png") no-repeat center top transparent;
+}
+/* line 57, ../sass/ie.scss */
+.ie8 #block-block-3 .row-2 {
+  background: url("../images/row-2-ie.png") no-repeat center top transparent;
+}
+/* line 60, ../sass/ie.scss */
+.ie8 #block-block-3 .row-3 {
+  background: url("../images/row-3-ie.png") no-repeat center top transparent;
+}
+/* line 63, ../sass/ie.scss */
+.ie8 #block-block-3 .row-4 {
+  background: url("../images/row-4-ie.png") no-repeat center top transparent;
+}
+/* line 66, ../sass/ie.scss */
+.ie8 #block-block-3 .row-5 {
+  background: url("../images/row-5-ie.png") no-repeat center top transparent;
+}
+/* line 69, ../sass/ie.scss */
+.ie8 #block-block-3 .row-6 {
+  background: url("../images/row-6-ie.png") no-repeat center top transparent;
+}
+/* line 74, ../sass/ie.scss */
+.ie8 #node-5 .field-name-field-main-text {
+  margin-top: 95px;
+}
