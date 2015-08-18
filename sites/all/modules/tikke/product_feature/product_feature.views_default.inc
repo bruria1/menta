@@ -34,20 +34,8 @@ function product_feature_views_default_views() {
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'מיין לפי';
   $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'עולה';
   $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'יורד';
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page'] = TRUE;
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'מספר פריטים בעמוד';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = TRUE;
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- הכל -';
-  $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'היסט';
-  $handler->display->display_options['pager']['options']['tags']['first'] = '« לעמוד הראשון';
-  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ לעמוד הקודם';
-  $handler->display->display_options['pager']['options']['tags']['next'] = 'לעמוד הבא ›';
-  $handler->display->display_options['pager']['options']['tags']['last'] = 'לעמוד האחרון »';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: Content: Title */
@@ -78,9 +66,8 @@ function product_feature_views_default_views() {
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 'All';
+  $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['exposed'] = TRUE;
   $handler->display->display_options['filters']['status']['expose']['operator_id'] = '';
   $handler->display->display_options['filters']['status']['expose']['label'] = 'מפורסם';
   $handler->display->display_options['filters']['status']['expose']['operator'] = 'status_op';
@@ -98,33 +85,91 @@ function product_feature_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'basic_product' => 'basic_product',
   );
-  /* Filter criterion: Content: קטגוריית מוצרים (field_product_category) */
-  $handler->display->display_options['filters']['field_product_category_tid']['id'] = 'field_product_category_tid';
-  $handler->display->display_options['filters']['field_product_category_tid']['table'] = 'field_data_field_product_category';
-  $handler->display->display_options['filters']['field_product_category_tid']['field'] = 'field_product_category_tid';
-  $handler->display->display_options['filters']['field_product_category_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_product_category_tid']['expose']['operator_id'] = 'field_product_category_tid_op';
-  $handler->display->display_options['filters']['field_product_category_tid']['expose']['label'] = 'קטגוריית מוצרים ';
-  $handler->display->display_options['filters']['field_product_category_tid']['expose']['operator'] = 'field_product_category_tid_op';
-  $handler->display->display_options['filters']['field_product_category_tid']['expose']['identifier'] = 'field_product_category_tid';
-  $handler->display->display_options['filters']['field_product_category_tid']['expose']['remember_roles'] = array(
+  /* Filter criterion: Content: קטגוריית המוצר (field_product_term) */
+  $handler->display->display_options['filters']['field_product_term_tid']['id'] = 'field_product_term_tid';
+  $handler->display->display_options['filters']['field_product_term_tid']['table'] = 'field_data_field_product_term';
+  $handler->display->display_options['filters']['field_product_term_tid']['field'] = 'field_product_term_tid';
+  $handler->display->display_options['filters']['field_product_term_tid']['value'] = array(
+    196 => '196',
+    194 => '194',
+    195 => '195',
+  );
+  $handler->display->display_options['filters']['field_product_term_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_product_term_tid']['expose']['operator_id'] = 'field_product_term_tid_op';
+  $handler->display->display_options['filters']['field_product_term_tid']['expose']['label'] = 'הצג את:';
+  $handler->display->display_options['filters']['field_product_term_tid']['expose']['operator'] = 'field_product_term_tid_op';
+  $handler->display->display_options['filters']['field_product_term_tid']['expose']['identifier'] = 'field_product_term_tid';
+  $handler->display->display_options['filters']['field_product_term_tid']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
     4 => 0,
   );
-  $handler->display->display_options['filters']['field_product_category_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_product_category_tid']['vocabulary'] = 'product_categories';
+  $handler->display->display_options['filters']['field_product_term_tid']['expose']['reduce'] = TRUE;
+  $handler->display->display_options['filters']['field_product_term_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_product_term_tid']['vocabulary'] = 'product_category';
 
   /* Display: מוצרים */
   $handler = $view->new_display('block', 'מוצרים', 'block');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'התאמה';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'איתחול';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'מיין לפי';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'עולה';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'יורד';
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'general' => array(
+      'allow_secondary' => 0,
+      'secondary_label' => 'אפשרויות מתקדמות',
+    ),
+    'field_product_term_tid' => array(
+      'bef_format' => 'bef_links',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+  );
+  $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
+  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'filtered_html';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = '[field_class_to_term] [field_width_element]';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: קטגוריית המוצר (field_product_term) */
+  $handler->display->display_options['relationships']['field_product_term_tid']['id'] = 'field_product_term_tid';
+  $handler->display->display_options['relationships']['field_product_term_tid']['table'] = 'field_data_field_product_term';
+  $handler->display->display_options['relationships']['field_product_term_tid']['field'] = 'field_product_term_tid';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Class to term */
+  $handler->display->display_options['fields']['field_class_to_term']['id'] = 'field_class_to_term';
+  $handler->display->display_options['fields']['field_class_to_term']['table'] = 'field_data_field_class_to_term';
+  $handler->display->display_options['fields']['field_class_to_term']['field'] = 'field_class_to_term';
+  $handler->display->display_options['fields']['field_class_to_term']['relationship'] = 'field_product_term_tid';
+  $handler->display->display_options['fields']['field_class_to_term']['ui_name'] = 'Class to term';
+  $handler->display->display_options['fields']['field_class_to_term']['label'] = '';
+  $handler->display->display_options['fields']['field_class_to_term']['element_class'] = '[field_class_to_term] ';
+  $handler->display->display_options['fields']['field_class_to_term']['element_label_colon'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -132,6 +177,8 @@ function product_feature_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: תמונת מוצר */
   $handler->display->display_options['fields']['field_product_image']['id'] = 'field_product_image';
   $handler->display->display_options['fields']['field_product_image']['table'] = 'field_data_field_product_image';
@@ -168,6 +215,7 @@ function product_feature_views_default_views() {
   $handler->display->display_options['fields']['field_legal_info']['field'] = 'field_legal_info';
   $handler->display->display_options['fields']['field_legal_info']['label'] = '';
   $handler->display->display_options['fields']['field_legal_info']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_legal_info']['element_class'] = 'tipsy';
   $handler->display->display_options['fields']['field_legal_info']['element_label_colon'] = FALSE;
   /* Field: Content: משתנה מוצר */
   $handler->display->display_options['fields']['field_var_product']['id'] = 'field_var_product';
@@ -175,6 +223,25 @@ function product_feature_views_default_views() {
   $handler->display->display_options['fields']['field_var_product']['field'] = 'field_var_product';
   $handler->display->display_options['fields']['field_var_product']['label'] = '';
   $handler->display->display_options['fields']['field_var_product']['element_label_colon'] = FALSE;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<p class="tipsy" title="[field_legal_info]">מידע</p>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Field: Content: סיומת לעלות */
+  $handler->display->display_options['fields']['field_end_price']['id'] = 'field_end_price';
+  $handler->display->display_options['fields']['field_end_price']['table'] = 'field_data_field_end_price';
+  $handler->display->display_options['fields']['field_end_price']['field'] = 'field_end_price';
+  $handler->display->display_options['fields']['field_end_price']['label'] = '';
+  $handler->display->display_options['fields']['field_end_price']['element_label_colon'] = FALSE;
+  /* Field: Content: width element */
+  $handler->display->display_options['fields']['field_width_element']['id'] = 'field_width_element';
+  $handler->display->display_options['fields']['field_width_element']['table'] = 'field_data_field_width_element';
+  $handler->display->display_options['fields']['field_width_element']['field'] = 'field_width_element';
+  $handler->display->display_options['fields']['field_width_element']['label'] = '';
+  $handler->display->display_options['fields']['field_width_element']['element_label_colon'] = FALSE;
   $handler->display->display_options['block_description'] = 'תיבת מוצרים';
 
   /* Display: באנר למעלה */
@@ -467,13 +534,6 @@ function product_feature_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: קטגוריית מוצרים */
-  $handler->display->display_options['fields']['field_product_category']['id'] = 'field_product_category';
-  $handler->display->display_options['fields']['field_product_category']['table'] = 'field_data_field_product_category';
-  $handler->display->display_options['fields']['field_product_category']['field'] = 'field_product_category';
-  $handler->display->display_options['fields']['field_product_category']['label'] = 'קטגוריית מוצר';
-  $handler->display->display_options['fields']['field_product_category']['type'] = 'taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_product_category']['delta_offset'] = '0';
   /* Field: Content: Post date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
@@ -535,23 +595,6 @@ function product_feature_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'basic_product' => 'basic_product',
   );
-  /* Filter criterion: Content: קטגוריית מוצרים (field_product_category) */
-  $handler->display->display_options['filters']['field_product_category_tid']['id'] = 'field_product_category_tid';
-  $handler->display->display_options['filters']['field_product_category_tid']['table'] = 'field_data_field_product_category';
-  $handler->display->display_options['filters']['field_product_category_tid']['field'] = 'field_product_category_tid';
-  $handler->display->display_options['filters']['field_product_category_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_product_category_tid']['expose']['operator_id'] = 'field_product_category_tid_op';
-  $handler->display->display_options['filters']['field_product_category_tid']['expose']['label'] = 'קטגוריית מוצרים ';
-  $handler->display->display_options['filters']['field_product_category_tid']['expose']['operator'] = 'field_product_category_tid_op';
-  $handler->display->display_options['filters']['field_product_category_tid']['expose']['identifier'] = 'field_product_category_tid';
-  $handler->display->display_options['filters']['field_product_category_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
-  );
-  $handler->display->display_options['filters']['field_product_category_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_product_category_tid']['vocabulary'] = 'product_categories';
   /* Filter criterion: Content: Title */
   $handler->display->display_options['filters']['title']['id'] = 'title';
   $handler->display->display_options['filters']['title']['table'] = 'node';
@@ -578,20 +621,16 @@ function product_feature_views_default_views() {
     t('מיין לפי'),
     t('עולה'),
     t('יורד'),
-    t('מספר פריטים בעמוד'),
-    t('- הכל -'),
-    t('היסט'),
-    t('« לעמוד הראשון'),
-    t('‹ לעמוד הקודם'),
-    t('לעמוד הבא ›'),
-    t('לעמוד האחרון »'),
     t('כותרת'),
     t('תמונת מוצר'),
     t('Content'),
     t('- Choose an operation -'),
     t('מפורסם'),
-    t('קטגוריית מוצרים '),
+    t('הצג את:'),
     t('מוצרים'),
+    t('Select any filter and click on Apply to see results'),
+    t('term from field_product_term'),
+    t('<p class="tipsy" title="[field_legal_info]">מידע</p>'),
     t('תיבת מוצרים'),
     t('באנר למעלה'),
     t('באנר'),
@@ -600,7 +639,6 @@ function product_feature_views_default_views() {
     t('מחיקה'),
     t('שינוי ערכים'),
     t('תמונה'),
-    t('קטגוריית מוצר'),
     t('תאריך פירסום'),
     t('ניהול'),
     t('צפיה'),

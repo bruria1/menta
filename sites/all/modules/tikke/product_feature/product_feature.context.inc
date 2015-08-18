@@ -19,7 +19,7 @@ function product_feature_context_default_contexts() {
   $context->conditions = array(
     'path' => array(
       'values' => array(
-        'node/369' => 'node/369',
+        'node/380' => 'node/380',
       ),
     ),
   );
