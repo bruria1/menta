@@ -48,6 +48,7 @@
 
 $red: #c20e1a;
 $dark-red: #99000a;
+$gray: #d9d9d9;
 
 @mixin button{
     background-color: $red!important;
@@ -2611,3 +2612,151 @@ body.page-node-324{
     width: 95px;
   }
 }
+
+
+// New product page design
+#block-views-products-view-block {
+  .views-submit-button {
+    display: none;
+  }
+  #edit-field-product-term-tid-wrapper {
+    max-width: 1024px;
+    width: 100%;
+    a {
+      color: $red;
+      font-size: 120%;
+      &:hover {
+        border-bottom: 1px solid $red;
+      }
+    }
+  }
+  label {
+    float: right;
+    background-color: $red;
+    color: #fff;
+    padding: 0.2em 0.5em;
+  }
+  .views-widget {
+    width: 100%;
+    position: relative;
+    top: -10px;
+    #edit-field-product-term-tid-all {
+      display: none;
+    }
+    .form-type-bef-link {
+      float: right;
+      padding: 0.8em 2em;
+    }
+  }
+  .views-row.joe {
+    min-width: 700px;
+  }
+  .views-row {
+    height: 370px;
+    border: 1px solid $gray;
+    display: block;
+    float: right;
+    max-width: 360px;
+    width: 100%;
+    margin: 0px 25px 20px 20px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px; /* future proofing */
+    -khtml-border-radius: 4px; /* for old Konqueror browsers */
+    #main_product {
+      padding: 0em 1em;
+      position: relative;
+    }
+    .product_title {
+      font-size: 30px;
+      color: $red;
+      text-align: center;
+    }
+    .product_image {
+      width: 100%;
+      margin-top: 10px;
+      .field-content  {
+        margin: 0 auto;
+        width: 90%;
+      }
+      img {
+        margin: 0 auto;
+      }
+    }
+    .product_price {
+      background-color:$red;
+      color: #fff;
+      border-radius: 50%;
+      width: 125px;
+      height: 125px;
+      position: absolute;
+      left: 15px;
+      top: 230px;
+      text-align: center;
+      line-height: 1;
+      .product_price_inner {
+        padding: 19px 16px 0;
+      }
+      .product_price_top {
+        font-size: 21px;
+      }
+      .product_price_middle {
+        font-size: 38px;
+      }
+      .product_price_bottom {
+        font-size: 15px;
+      }
+    }
+  }
+  .views-row.joe {
+      .product_price {
+        background-color:#211f20;
+      }
+    }
+  .views-row.long {
+    width: 100%;
+    max-width: 1170px;
+  }
+  .views-row.middle {
+    width: 100%;
+    max-width: 763px;
+  }
+  .product_term {
+    .comf, .electric {
+      display: none;
+    }
+    .joe {
+      background: url('../images/product_page/joe.png') no-repeat scroll 0 0;
+      height: 80px;
+      width: 80px;
+      text-indent: -9999px;
+      float: left;
+      margin: 15px 0px 0px 0px;
+    }
+  }
+  .product_terms {
+    position: absolute;
+    right: 10px;
+    top: 320px;
+    p {
+      background: url('../images/product_page/tp_red.png') no-repeat scroll 0 0;
+      height: 40px;
+      width: 40px;
+      text-indent: -9999px;
+      float: left;
+    }
+  }
+  .views-row.joe {
+    .product_terms {
+    p {
+      background: url('../images/product_page/tp_black.png') no-repeat scroll 0 0;
+    }
+  }
+  }
+   
+}
+
+
+
+
+
