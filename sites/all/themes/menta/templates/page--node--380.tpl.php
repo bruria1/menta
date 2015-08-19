@@ -118,51 +118,15 @@
     <?php endif; ?>
   </div>
 </header>
-<div id="wrapper-slides">
-  <div id="slides">
-    <div class="slides-container">
-        
-          <div class="slide slide-2">
-            <img src="sites/all/themes/menta/images/product_page/baner_01_medium.jpg" width="1400" height:"500" >
-          </div> 
-          <div class="slide slide-3">
-            <img src="sites/all/themes/menta/images/product_page/baner_02_medium.jpg" width="1400" height:"500" >
-          </div>
-         <div class="slide slide-4">
-            <img src="sites/all/themes/menta/images/product_page/baner_03_medium.jpg" width="1400" height:"500" >
-          </div>
-    </div>
-
-
-    <nav class="slides-navigation">
-      <div class="wrapper">
-        <a href="#" class="prev"></a>
-        <a href="#" class="next"></a>
-      </div>
-    </nav>  
-  </div>
-  <script src="sites/all/themes/menta/superslides/js/jquery.min.js"></script>
-  <script src="sites/all/themes/menta/superslides/js/jquery.easing.1.3.js"></script>
-  <script src="sites/all/themes/menta/superslides/js/jquery.animate-enhanced.min.js"></script>
-  <script src="sites/all/themes/menta/superslides/js/jquery.superslides.js" type="text/javascript" charset="utf-8"></script>
-   <script>
-    $('#slides').superslides({
-      animation: 'fade',
-      hashchange: true,
-      animation_speed: 500,
-      play: 0
-    });
-  </script>  
-
-<div class="main-container container">
-
-  <header role="banner" id="page-header">
+<header role="banner" id="page-header">
     <?php if (!empty($site_slogan)): ?>
       <p class="lead"><?php print $site_slogan; ?></p>
     <?php endif; ?>
 
     <?php print render($page['header']); ?>
   </header> <!-- /#page-header -->
+
+<div class="main-container container">
 
   <div class="row">
 

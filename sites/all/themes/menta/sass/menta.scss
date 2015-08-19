@@ -2623,9 +2623,12 @@ body.page-node-324{
 
 // Baner top area
 
-.page-node-380 {
-  #slides {
-    height: 500px;
+#block-views-product-page-baner-block {
+  .view {
+    padding:0;
+  }
+  .flexslider {
+    border:0;
   }
 }
 

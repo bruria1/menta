@@ -3333,55 +3333,59 @@ body.page-node-324 {
  * New product page design
  ****************************************************************************/
 /* line 2627, ../sass/menta.scss */
-.page-node-380 #slides {
-  height: 500px;
+#block-views-product-page-baner-block .view {
+  padding: 0;
+}
+/* line 2630, ../sass/menta.scss */
+#block-views-product-page-baner-block .flexslider {
+  border: 0;
 }
 
-/* line 2634, ../sass/menta.scss */
+/* line 2637, ../sass/menta.scss */
 #block-views-products-view-block .views-submit-button {
   display: none;
 }
-/* line 2637, ../sass/menta.scss */
+/* line 2640, ../sass/menta.scss */
 #block-views-products-view-block #edit-field-product-term-tid-wrapper {
   max-width: 1024px;
   width: 100%;
 }
-/* line 2640, ../sass/menta.scss */
+/* line 2643, ../sass/menta.scss */
 #block-views-products-view-block #edit-field-product-term-tid-wrapper a {
   color: #c20e1a;
   font-size: 120%;
 }
-/* line 2643, ../sass/menta.scss */
+/* line 2646, ../sass/menta.scss */
 #block-views-products-view-block #edit-field-product-term-tid-wrapper a:hover {
   border-bottom: 1px solid #c20e1a;
 }
-/* line 2648, ../sass/menta.scss */
+/* line 2651, ../sass/menta.scss */
 #block-views-products-view-block label {
   float: right;
   background-color: #c20e1a;
   color: #fff;
   padding: 0.2em 0.5em;
 }
-/* line 2654, ../sass/menta.scss */
+/* line 2657, ../sass/menta.scss */
 #block-views-products-view-block .views-widget {
   width: 100%;
   position: relative;
   top: -10px;
 }
-/* line 2658, ../sass/menta.scss */
+/* line 2661, ../sass/menta.scss */
 #block-views-products-view-block .views-widget #edit-field-product-term-tid-all {
   display: none;
 }
-/* line 2661, ../sass/menta.scss */
+/* line 2664, ../sass/menta.scss */
 #block-views-products-view-block .views-widget .form-type-bef-link {
   float: right;
   padding: 0.8em 2em;
 }
-/* line 2666, ../sass/menta.scss */
+/* line 2669, ../sass/menta.scss */
 #block-views-products-view-block .views-row.joe {
   min-width: 594px;
 }
-/* line 2669, ../sass/menta.scss */
+/* line 2672, ../sass/menta.scss */
 #block-views-products-view-block .views-row {
   height: 300px;
   border: 1px solid #d9d9d9;
@@ -3397,32 +3401,32 @@ body.page-node-324 {
   -khtml-border-radius: 4px;
   /* for old Konqueror browsers */
 }
-/* line 2681, ../sass/menta.scss */
+/* line 2684, ../sass/menta.scss */
 #block-views-products-view-block .views-row #main_product {
   padding: 0em 0.7em;
   position: relative;
 }
-/* line 2685, ../sass/menta.scss */
+/* line 2688, ../sass/menta.scss */
 #block-views-products-view-block .views-row .product_title {
   font-size: 25px;
   color: #c20e1a;
   text-align: center;
 }
-/* line 2690, ../sass/menta.scss */
+/* line 2693, ../sass/menta.scss */
 #block-views-products-view-block .views-row .product_image {
   width: 100%;
   margin-top: 10px;
 }
-/* line 2693, ../sass/menta.scss */
+/* line 2696, ../sass/menta.scss */
 #block-views-products-view-block .views-row .product_image .field-content {
   margin: 0 auto;
   width: 90%;
 }
-/* line 2697, ../sass/menta.scss */
+/* line 2700, ../sass/menta.scss */
 #block-views-products-view-block .views-row .product_image img {
   margin: 0 auto;
 }
-/* line 2701, ../sass/menta.scss */
+/* line 2704, ../sass/menta.scss */
 #block-views-products-view-block .views-row .product_price {
   background-color: #c20e1a;
   color: #fff;
@@ -3436,44 +3440,44 @@ body.page-node-324 {
   line-height: 1;
   font-weight: bold;
 }
-/* line 2713, ../sass/menta.scss */
+/* line 2716, ../sass/menta.scss */
 #block-views-products-view-block .views-row .product_price .product_price_inner {
   padding: 19px 16px 0;
 }
-/* line 2716, ../sass/menta.scss */
+/* line 2719, ../sass/menta.scss */
 #block-views-products-view-block .views-row .product_price .product_price_top {
   font-size: 21px;
 }
-/* line 2719, ../sass/menta.scss */
+/* line 2722, ../sass/menta.scss */
 #block-views-products-view-block .views-row .product_price .product_price_middle {
   font-size: 38px;
 }
-/* line 2721, ../sass/menta.scss */
+/* line 2724, ../sass/menta.scss */
 #block-views-products-view-block .views-row .product_price .product_price_middle span {
   font-size: 15px;
   position: relative;
   top: 15px;
   display: block;
 }
-/* line 2731, ../sass/menta.scss */
+/* line 2734, ../sass/menta.scss */
 #block-views-products-view-block .views-row.joe .product_price {
   background-color: #211f20;
 }
-/* line 2735, ../sass/menta.scss */
+/* line 2738, ../sass/menta.scss */
 #block-views-products-view-block .views-row.long {
   width: 100%;
   max-width: 897px;
 }
-/* line 2739, ../sass/menta.scss */
+/* line 2742, ../sass/menta.scss */
 #block-views-products-view-block .views-row.middle {
   width: 100%;
   max-width: 594px;
 }
-/* line 2744, ../sass/menta.scss */
+/* line 2747, ../sass/menta.scss */
 #block-views-products-view-block .product_term .comf, #block-views-products-view-block .product_term .electric {
   display: none;
 }
-/* line 2747, ../sass/menta.scss */
+/* line 2750, ../sass/menta.scss */
 #block-views-products-view-block .product_term .joe {
   background: url("../images/product_page/joe.png") no-repeat scroll 0 0;
   height: 80px;
@@ -3482,13 +3486,13 @@ body.page-node-324 {
   float: left;
   margin: 15px 0px 0px 0px;
 }
-/* line 2756, ../sass/menta.scss */
+/* line 2759, ../sass/menta.scss */
 #block-views-products-view-block .product_terms {
   position: absolute;
   right: 7px;
   top: 260px;
 }
-/* line 2760, ../sass/menta.scss */
+/* line 2763, ../sass/menta.scss */
 #block-views-products-view-block .product_terms p {
   background: url("../images/product_page/tp_red.png") no-repeat scroll 0 0;
   height: 32px;
@@ -3497,7 +3501,7 @@ body.page-node-324 {
   float: left;
   background-size: 32px;
 }
-/* line 2771, ../sass/menta.scss */
+/* line 2774, ../sass/menta.scss */
 #block-views-products-view-block .views-row.joe .product_terms p {
   background: url("../images/product_page/tp_black.png") no-repeat scroll 0 0;
   background-size: 32px;
