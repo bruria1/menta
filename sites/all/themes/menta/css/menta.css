@@ -3450,34 +3450,41 @@ body.page-node-324 {
 }
 /* line 2722, ../sass/menta.scss */
 #block-views-products-view-block .views-row .product_price .product_price_middle {
-  font-size: 38px;
+  font-size: 34px;
+  display: inline-block;
+  margin-right: -10px;
 }
-/* line 2724, ../sass/menta.scss */
-#block-views-products-view-block .views-row .product_price .product_price_middle span {
-  font-size: 15px;
+/* line 2728, ../sass/menta.scss */
+#block-views-products-view-block .views-row .product_price .product_price_middle .field-content.icon_yes:after {
+  background: url("../images/product_page/icon_yes.png") no-repeat;
+  background-size: 12px;
+  content: '';
+  display: inline-block;
+  height: 12px;
+  width: 12px;
   position: relative;
-  top: 15px;
-  display: block;
+  float: left;
+  margin: 17px -13px;
 }
-/* line 2734, ../sass/menta.scss */
+/* line 2746, ../sass/menta.scss */
 #block-views-products-view-block .views-row.joe .product_price {
   background-color: #211f20;
 }
-/* line 2738, ../sass/menta.scss */
+/* line 2750, ../sass/menta.scss */
 #block-views-products-view-block .views-row.long {
   width: 100%;
   max-width: 897px;
 }
-/* line 2742, ../sass/menta.scss */
+/* line 2754, ../sass/menta.scss */
 #block-views-products-view-block .views-row.middle {
   width: 100%;
   max-width: 594px;
 }
-/* line 2747, ../sass/menta.scss */
-#block-views-products-view-block .product_term .comf, #block-views-products-view-block .product_term .electric {
+/* line 2759, ../sass/menta.scss */
+#block-views-products-view-block .product_term .comf, #block-views-products-view-block .product_term .electric, #block-views-products-view-block .product_term .camping {
   display: none;
 }
-/* line 2750, ../sass/menta.scss */
+/* line 2762, ../sass/menta.scss */
 #block-views-products-view-block .product_term .joe {
   background: url("../images/product_page/joe.png") no-repeat scroll 0 0;
   height: 80px;
@@ -3486,13 +3493,13 @@ body.page-node-324 {
   float: left;
   margin: 15px 0px 0px 0px;
 }
-/* line 2759, ../sass/menta.scss */
+/* line 2771, ../sass/menta.scss */
 #block-views-products-view-block .product_terms {
   position: absolute;
   right: 7px;
   top: 260px;
 }
-/* line 2763, ../sass/menta.scss */
+/* line 2775, ../sass/menta.scss */
 #block-views-products-view-block .product_terms p {
   background: url("../images/product_page/tp_red.png") no-repeat scroll 0 0;
   height: 32px;
@@ -3501,7 +3508,7 @@ body.page-node-324 {
   float: left;
   background-size: 32px;
 }
-/* line 2774, ../sass/menta.scss */
+/* line 2786, ../sass/menta.scss */
 #block-views-products-view-block .views-row.joe .product_terms p {
   background: url("../images/product_page/tp_black.png") no-repeat scroll 0 0;
   background-size: 32px;

@@ -2720,14 +2720,26 @@ body.page-node-324{
         font-size: 21px;
       }
       .product_price_middle {
-        font-size: 38px;
-        span {
-          font-size: 15px;
-          position: relative;
-          top: 15px;
-          display: block;
+        font-size: 34px;
+        display:inline-block;
+        margin-right:-10px;
+      }
+      .product_price_middle {
+        .field-content.icon_yes:after {
+          background:  url("../images/product_page/icon_yes.png") no-repeat;
+          background-size:12px;
+          content: '';
+          display:inline-block;
+          height: 12px;
+          width: 12px;
+          position:relative;
+          float: left;
+          margin: 17px -13px;
         }
       }
+
+      
+
     }
   }
   .views-row.joe {
@@ -2744,7 +2756,7 @@ body.page-node-324{
     max-width: 594px;
   }
   .product_term {
-    .comf, .electric {
+    .comf, .electric, .camping {
       display: none;
     }
     .joe {

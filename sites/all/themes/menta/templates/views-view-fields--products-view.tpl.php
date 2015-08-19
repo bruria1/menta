@@ -17,9 +17,6 @@
 				<div class="product_price_middle">
 					<?php print $fields["field_product_price"]->content; ?>
 				</div>
-				<div class="product_price_bottom">
-					<?php print $fields["field_end_price"]->content; ?>
-				</div>
 			</div>
 		</div>
 		<div class="product_terms">
