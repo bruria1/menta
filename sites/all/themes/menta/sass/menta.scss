@@ -41,12 +41,6 @@
   @else if $media == large {
     @media  (min-width: 768px) { @content; }
   }
-  @if $media == small-medium {
-    @media (max-width: 767px) { @content; }
-  }
-  @else if $media == extra {
-    @media  (min-width: 1280px) { @content; }
-  }
 }
 
 $red: #c20e1a;
@@ -2630,6 +2624,15 @@ body.page-node-324{
   .flexslider {
     border:0;
   }
+  @include respond-to(small) {
+    display: none;
+  }
+}
+
+#block-views-product-page-baner-block-1 {
+  @include respond-to(large) {
+    display: none;
+  }
 }
 
 // Filter area
@@ -2653,6 +2656,9 @@ body.page-node-324{
     background-color: $red;
     color: #fff;
     padding: 0.2em 0.5em;
+    @include respond-to(small) {
+      margin-bottom: 10px;
+    }
   }
   .views-widget {
     width: 100%;
@@ -2664,10 +2670,18 @@ body.page-node-324{
     .form-type-bef-link {
       float: right;
       padding: 0.8em 2em;
+      @include respond-to(small) {
+        float: none;
+        padding: 0;
+        clear: both;
+      }
     }
   }
   .views-row.joe {
     min-width: 594px;
+    @include respond-to(small) {
+      min-width: 260px;
+    }
   }
   .views-row {
     height: 300px;
@@ -2689,6 +2703,9 @@ body.page-node-324{
       font-size: 25px;
       color: $red;
       text-align: center;
+      @include respond-to(small) {
+        font-size: 20px;
+      }
     }
     .product_image {
       width: 100%;
@@ -2713,28 +2730,42 @@ body.page-node-324{
       text-align: center;
       line-height: 1;
       font-weight: bold;
+      @include respond-to(small) {
+        width: 80px;
+        height: 80px;
+        top:210px
+      }
       .product_price_inner {
         padding: 19px 16px 0;
       }
       .product_price_top {
         font-size: 21px;
+        @include respond-to(small) {
+          font-size: 17px;
+        }
       }
       .product_price_middle {
         font-size: 34px;
         display:inline-block;
         margin-right:-10px;
+        @include respond-to(small) {
+          font-size: 20px;
+        }
       }
       .product_price_middle {
         .field-content.icon_yes:after {
           background:  url("../images/product_page/icon_yes.png") no-repeat;
-          background-size:12px;
+          background-size:9px;
           content: '';
           display:inline-block;
-          height: 12px;
-          width: 12px;
+          height: 9px;
+          width: 9px;
           position:relative;
           float: left;
           margin: 17px -13px;
+          @include respond-to(small) {
+            margin-top: 9px;
+          }
         }
       }
 
@@ -2750,10 +2781,24 @@ body.page-node-324{
   .views-row.long {
     width: 100%;
     max-width: 897px;
+    @include respond-to(small) {
+      min-width: 260px;
+      img {
+        width: 220px;
+        height: auto;
+      }
+    }
   }
   .views-row.middle {
     width: 100%;
     max-width: 594px;
+    @include respond-to(small) {
+      min-width: 260px;
+      img {
+        width: 220px;
+        height: auto;
+      }
+    }
   }
   .product_term {
     .comf, .electric {
@@ -2766,9 +2811,17 @@ body.page-node-324{
       text-indent: -9999px;
       float: left;
       margin: 15px 0px 0px 0px;
+      @include respond-to(small) {
+        height: 50px;
+        width: 50px;
+        background-size:50px;
+      }
     }
   }
   .product_terms {
+    @include respond-to(small) {
+      display: none;
+    }
     position: absolute;
     right: 7px;
     top: 260px;
