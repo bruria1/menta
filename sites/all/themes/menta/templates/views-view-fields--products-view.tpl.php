@@ -14,13 +14,15 @@
 				<div class="product_price_top">
 					<?php print $fields["field_pre_price"]->content; ?>
 				</div>
-				<div class="product_price_middle">
-					<?php print $fields["field_product_price"]->content; ?>
-				</div>
+				<?php if ($fields["field_product_price"]->content) { ?>
+					<div class="product_price_middle">
+						<?php print $fields["field_product_price"]->content; ?>
+					</div>
+				<?php } ?>
 			</div>
 		</div>
 		<div class="product_terms">
-			<?php print $fields["nothing"]->content; ?>
+			<?php print $fields["field_legal_info"]->content; ?>
 		</div>
 	</div>
 </div>

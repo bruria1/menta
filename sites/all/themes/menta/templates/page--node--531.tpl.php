@@ -73,72 +73,12 @@
  * @ingroup themeable
  */
 ?>
-<div id="slide-desktop">
-
-<div id="wrapper-slides">
-  <div id="slides">
-    <div class="slides-container">
-          
-         <!-- <div class="slide slide-1">
-            <div class="link-slide-1 link-slide"><div class="link"><a href="node/30">לטעימה מהתפריט</a></div></div>
-            <iframe id="popup-youtube-player" width="100%" height="100%" src="//www.youtube.com/embed/4YkVPX5kKoQ?enablejsapi=1&wmode=transparent&rel=0&controls=0&iv_load_policy=3&autoplay=1&modestbranding=0&showinfo=0&showsearch=1" frameborder="0" allowfullscreen></iframe> 
-          </div> --> 
-           <!-- <div class="slide slide-1">
-            <div class="link-slide-1 link-slide"><div class="link"><a href="node/380">מבצעים במנטה</a></div></div>
-            <img src="sites/all/themes/menta/superslides/images/summer1.jpg" width="1400" height:"680" >
-          </div> -->
-           <div class="slide slide-1">
-            <div class="link-slide-1 link-slide"><div class="link"><a href="node/30">לטעימה מהתפריט</a></div></div>
-            <img src="sites/all/themes/menta/superslides/images/joe2.jpg" width="1400" height:"680" >
-          </div> 
-          <div class="slide slide-2">
-            <div class="link-slide-2 link-slide"><div class="link"><a href="node/30">לטעימה מהתפריט</a></div></div>
-            <img src="sites/all/themes/menta/superslides/images/joe3.jpg" width="1400" height:"680" >
-          </div> 
-          <div class="slide slide-4">
-            <div class="link-slide-4 link-slide"><div class="link"><a href="node/324">לבחירת קפסולות</a></div></div>
-            <img src="sites/all/themes/menta/superslides/images/extra_strong.jpg" width="1400" height:"680" >
-          </div>
-          <div class="slide slide-3">
-            <div class="link-slide-3 link-slide"><div class="link"><a href="node/5">לתשלום חשבונות</a></div></div>
-            <img src="sites/all/themes/menta/superslides/images/payment.jpg" width="1400" height:"680" >
-          </div>
-
-          <!-- <div class="slide slide-1">
-            <div class="link-slide-1 link-slide"><div class="link"><a href="node/30">לטעימה מהתפריט</a></div></div>
-            <img src="sites/all/themes/menta/superslides/images/summer3.jpg" width="1400" height:"680" >
-          </div> -->
-    </div>
-
-
-    <nav class="slides-navigation">
-      <div class="wrapper">
-        <a href="#" class="prev"></a>
-        <a href="#" class="next"></a>
-      </div>
-    </nav>  
+<div id="bg-top"></div>
+<div class="circle">
+  <div class="inside">
+    <div class="text"><a href="/node/380">מבצעי מנטה</a></div>
   </div>
-  <script src="sites/all/themes/menta/superslides/js/jquery.min.js"></script>
-  <script src="sites/all/themes/menta/superslides/js/jquery.easing.1.3.js"></script>
-  <script src="sites/all/themes/menta/superslides/js/jquery.animate-enhanced.min.js"></script>
-  <script src="sites/all/themes/menta/superslides/js/jquery.superslides.js" type="text/javascript" charset="utf-8"></script>
-   <script>
-    $('#slides').superslides({
-      animation: 'fade',
-      hashchange: true,
-      animation_speed: 500,
-      play: 0
-    });
-  </script>  
-   <footer class="footer">
-  <div class="footer-top"></div>
-  <div class="footer-content">
-    <?php print render($page['footer']); ?>
-  </div>
-</footer>
-</div> 
 </div>
-
 
 <header id="navbar" role="banner" class="<?php print $navbar_classes; ?>">
   <div class="container">
@@ -183,41 +123,9 @@
   </div>
 </header>
 
-<div class="main-container container">
-<div id="slide-mobile">
-<!--
-          <div class="slide-mobile">
-            <div class="video-container">
-                <iframe src="//www.youtube.com/embed/4YkVPX5kKoQ?rel=0&showinfo=0&showsearch=1" frameborder="0" width="560" height="315"></iframe>
-              </div>
-          </div> -->
-          <!-- <div class="slide-mobile">
-            <a href="node/30">
-            <img src="sites/all/themes/menta/superslides/images/summer1.jpg" width="1400" height:"680" >
-            </a>
-          </div>  --> 
-           <div class="slide-mobile">
-            <a href="node/30">
-            <img src="sites/all/themes/menta/superslides/images/joe2.jpg" width="1400" height:"680" >
-            </a>
-          </div>  
-          <div class="slide-mobile">
-            <a href="node/30">
-            <img src="sites/all/themes/menta/superslides/images/joe3.jpg" width="1400" height:"680" >
-            </a>
-          </div> 
-          <div class="slide-mobile">
-            <a href="node/5">
-            <img src="sites/all/themes/menta/superslides/images/payment.jpg" width="1400" height:"680" >
-            </a>
-          </div> 
-          <div class="slide-mobile">
-            <a href="node/2">
-            <img src="sites/all/themes/menta/superslides/images/post-front.png" width="1400" height:"680" >
-            </a>
-          </div>
 
-</div>
+<div class="main-container container">
+
   <header role="banner" id="page-header">
     <?php if (!empty($site_slogan)): ?>
       <p class="lead"><?php print $site_slogan; ?></p>
@@ -226,5 +134,56 @@
     <?php print render($page['header']); ?>
   </header> <!-- /#page-header -->
 
+  <div class="row">
 
+    <?php if (!empty($page['sidebar_first'])): ?>
+      <aside class="col-sm-3" role="complementary">
+        <?php print render($page['sidebar_first']); ?>
+      </aside>  <!-- /#sidebar-first -->
+    <?php endif; ?>
+    <section<?php print $content_column_class; ?>>
+      <?php if (!empty($page['highlighted'])): ?>
+        <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
+      <?php endif; ?>
+      <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
+      <a id="main-content"></a>
+      <?php print render($title_prefix); ?>
+      <?php if (!empty($title)): ?>
+        <h1 class="page-header"><?php print $title; ?></h1>
+      <?php endif; ?>
+      <?php print render($title_suffix); ?>
+      <?php print $messages; ?>
 
+      <?php if (!empty($page['help'])): ?>
+        <?php print render($page['help']); ?>
+      <?php endif; ?>
+      <?php if (!empty($action_links)): ?>
+        <ul class="action-links"><?php print render($action_links); ?></ul>
+      <?php endif; ?>
+      <?php print render($page['content']); ?>
+            <?php if (!empty($tabs)): ?>
+        <?php print render($tabs); ?>
+      <?php endif; ?>
+    </section>
+
+    <?php if (!empty($page['sidebar_second'])): ?>
+      <aside class="col-sm-3" role="complementary">
+        <?php print render($page['sidebar_second']); ?>
+      </aside>  <!-- /#sidebar-second -->
+    <?php endif; ?>
+
+  </div>
+</div>
+
+<div id="content_bottom">
+  <?php if (!empty($page['content_bottom'])): ?>
+       <?php print render($page['content_bottom']); ?>
+  <?php endif; ?>
+</div>
+
+<footer class="footer">
+  <div class="footer-top"></div>
+  <div class="footer-content">
+    <?php print render($page['footer']); ?>
+  </div>
+</footer>

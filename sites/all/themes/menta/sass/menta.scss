@@ -1,35 +1,27 @@
 @font-face {
-   font-family: 'Narkis-Regular'; 
-   src: url('../fonts/Narkis-Regular.eot'); 
-   src: url('../fonts/Narkis-Regular?#iefix') format('embedded-opentype'), 
-        url('../fonts/Narkis-Regular.woff') format('woff'),
-        url('../fonts/Narkis-Regular.ttf') format('truetype'), 
-        url('../fonts/Narkis-Regular.svg') format('svg'); 
-   font-weight: normal; 
-   font-style: normal;
+  font-family: Narkis-Regular;
+  src: url('../fonts/Narkis-Regular.eot?') format('eot'), 
+  url('../fonts/Narkis-Regular.woff') format('woff'),
+  url('../fonts/Narkis-Regular.eot?#iefix') format('embedded-opentype'), 
+  url('../fonts/Narkis-Regular.ttf') format('truetype');
 }
 
 @font-face {
-   font-family: 'Narkis-Medium'; 
-   src: url('../fonts/Narkis-Medium.eot'); 
-   src: url('../fonts/Narkis-Medium?#iefix') format('embedded-opentype'), 
-        url('../fonts/Narkis-Medium.woff') format('woff'),
-        url('../fonts/Narkis-Medium.ttf') format('truetype'), 
-        url('../fonts/Narkis-Medium.svg') format('svg'); 
-   font-weight: normal; 
-   font-style: normal; 
+  font-family: Narkis-Medium;
+  src: url('../fonts/Narkis-Medium.eot?') format('eot'), 
+  url('../fonts/Narkis-Medium.woff') format('woff'),
+  url('../fonts/Narkis-Medium.eot?#iefix') format('embedded-opentype'), 
+  url('../fonts/Narkis-Medium.ttf') format('truetype');
 }
 
 @font-face {
-   font-family: 'Narkis-Thin'; 
-   src: url('../fonts/Narkis-Thin.eot'); 
-   src: url('../fonts/Narkis-Thin?#iefix') format('embedded-opentype'), 
-        url('../fonts/Narkis-Thin.woff') format('woff'),
-        url('../fonts/Narkis-Thin.ttf') format('truetype'), 
-        url('../fonts/Narkis-Thin.svg') format('svg'); 
-   font-weight: normal; 
-   font-style: normal; 
+  font-family: Narkis-Thin;
+  src: url('../fonts/Narkis-Thin.eot?') format('eot'), 
+  url('../fonts/Narkis-Thin.woff') format('woff'),
+  url('../fonts/Narkis-Thin.eot?#iefix') format('embedded-opentype'), 
+  url('../fonts/Narkis-Thin.ttf') format('truetype');
 }
+
 
 @mixin respond-to($media) {
   @if $media == small {
@@ -40,6 +32,9 @@
   }
   @else if $media == large {
     @media  (min-width: 768px) { @content; }
+  }
+  @if $media == small-medium {
+    @media (max-width: 767px) { @content; }
   }
 }
 
@@ -2614,17 +2609,31 @@ body.page-node-324{
 /* 
  * New product page design
  ****************************************************************************/
-
+.page-node-380{
+  .page-header{
+    display: none!important;
+    padding-top: 20px;
+  }
+}
 // Baner top area
 
 #block-views-product-page-baner-block {
   .view {
     padding:0;
   }
+  .flex-direction-nav a{
+    height: 48px!important;
+    &.flex-next{
+      right: 25px;
+    }
+  }
   .flexslider {
     border:0;
   }
   @include respond-to(small) {
+    display: none;
+  }
+  @include respond-to(medium) {
     display: none;
   }
 }
@@ -2650,6 +2659,9 @@ body.page-node-324{
         border-bottom: 1px solid $red;
       }
     }
+    .selected a{
+        border-bottom: 1px solid $red;
+    }
   }
   label {
     float: right;
@@ -2664,9 +2676,6 @@ body.page-node-324{
     width: 100%;
     position: relative;
     top: -10px;
-    #edit-field-product-term-tid-all {
-      display: none;
-    }
     .form-type-bef-link {
       float: right;
       padding: 0.8em 2em;
@@ -2678,7 +2687,8 @@ body.page-node-324{
     }
   }
   .views-row.joe {
-    min-width: 594px;
+    width: 594px;
+    max-width: 100%;
     @include respond-to(small) {
       min-width: 260px;
     }
@@ -2710,33 +2720,41 @@ body.page-node-324{
     .product_image {
       width: 100%;
       margin-top: 10px;
+      position: absolute;
+      top: 54px;
       .field-content  {
         margin: 0 auto;
         width: 90%;
       }
       img {
         margin: 0 auto;
+        display: block;
+        max-width: 100%;
+        height: auto;
       }
     }
     .product_price {
       background-color:$red;
       color: #fff;
       border-radius: 50%;
-      width: 110px;
-      height: 110px;
+      width: 90px;
+      height: 90px;
       position: absolute;
       left: 10px;
-      top: 180px;
+      top: 197px;
       text-align: center;
       line-height: 1;
       font-weight: bold;
+      display: table;
       @include respond-to(small) {
         width: 80px;
         height: 80px;
         top:210px
       }
       .product_price_inner {
-        padding: 19px 16px 0;
+        display: table-cell;
+        vertical-align: middle;
+        padding: 0 16px;
       }
       .product_price_top {
         font-size: 21px;
@@ -2796,6 +2814,7 @@ body.page-node-324{
       min-width: 260px;
       img {
         width: 220px;
+        max-width: 100%;
         height: auto;
       }
     }
@@ -2819,12 +2838,9 @@ body.page-node-324{
     }
   }
   .product_terms {
-    @include respond-to(small) {
-      display: none;
-    }
     position: absolute;
-    right: 7px;
-    top: 260px;
+    right: 3px;
+    top: 253px;
     p {
       background: url('../images/product_page/tp_red.png') no-repeat scroll 0 0;
       height: 32px;
@@ -2843,4 +2859,9 @@ body.page-node-324{
   }
   }
    
+}
+
+
+#block-views-write-capsule-block{
+  margin-bottom:93px;
 }

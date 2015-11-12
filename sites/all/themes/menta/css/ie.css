@@ -1,25 +1,19 @@
-/* line 1, ../sass/ie.scss */
-body.ie {
-  font-family: arial !important;
-}
-/* line 3, ../sass/ie.scss */
-body.ie .field-name-field-main-text, body.ie button, body.ie .block-title, body.ie .page-header, body.ie .navbar-nav a, body.ie .link-slide a, body.ie th, body.ie .alert-block {
-  font-family: arial !important;
-}
-/* line 6, ../sass/ie.scss */
-body.ie div.ddblock-cycle-upright60p div.scrollable-pager div.items div a {
-  font-family: arial !important;
-  font-size: 14px;
-}
-/* line 10, ../sass/ie.scss */
-body.ie .navbar-nav a {
-  font-size: 14px;
-}
-/* line 13, ../sass/ie.scss */
-body.ie .view-gas-stations .form-type-select select {
-  padding: 0 33px 0 0;
-}
-
+/*body.ie{
+	font-family: arial !important;
+	.field-name-field-main-text, button, .block-title, .page-header, .navbar-nav a, .link-slide a, th, .alert-block{
+		font-family: arial !important;
+	}
+	div.ddblock-cycle-upright60p div.scrollable-pager div.items div a{
+		font-family: arial !important;
+		font-size: 14px;
+	}
+	.navbar-nav a{
+		font-size: 14px;
+	}
+	.view-gas-stations .form-type-select select{
+		padding: 0 33px 0 0;
+	}
+}*/
 /* line 19, ../sass/ie.scss */
 .ie8 .view-gas-stations .form-type-select select {
   margin-top: -5px;
